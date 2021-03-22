@@ -1,0 +1,83 @@
+body {
+  font-family: "Helvetica Neue",sans-serif;
+  font-size: 1.6em;
+  background-image: url(../images/background.jpg);
+}
+
+main#playground {
+  position: relative;
+  margin: 15px auto;
+  width: 45vw;
+  text-align: center;
+}
+
+main#playground #play{
+  position: absolute;
+  color: rgb(255,255,255,0.5);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-color:#000;
+  border: solid 10px #fff;
+  z-index:2;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+main#playground #play:hover{
+  color: rgb(255,255,255,1);
+}
+
+div.cell {
+  width: 15vw;
+  height: 15vw;
+  min-height: 50px;
+  min-width: 50px;
+  display: inline-block;
+  margin: 3px;
+  border: 0px solid white;
+  box-sizing: border-box;
+  transition: border ease .1s;
+}
+
+button#go {
+  display: block;
+  width: 15vw;
+  font-size: 2em;
+  height: 10vh;
+  background-color: #ccc;
+  border: none;
+  margin: 3vh auto;
+  cursor: pointer;
+}
+
+div#message {
+  text-align: center;
+}
+
+/* On créer une classe hidden qui va nous aider à cacher une élément du DOM. Elle est très utile, car elle permet d'ajouter ou supprimer cette classe à un objet afin que celui-ci récupère son display par défaut (que ce soit block, inline, ou inline-block */
+
+.hidden {
+  display: none !important;
+}
+
+div.cell#red {
+  border-radius: 100% 0 0 0;
+}
+
+div.cell#green {
+  border-radius: 0 100% 0 0;
+}
+
+div.cell#yellow {
+  border-radius: 0 0 100% 0;
+}
+
+div.cell#blue {
+  border-radius: 0 0 0 100%;
+}
